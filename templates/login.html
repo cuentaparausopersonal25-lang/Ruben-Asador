@@ -1,0 +1,4 @@
+{% extends "base.html" %}{% block title %}Ingreso privado | RUBEN ASADOR{% endblock %}
+{% block content %}<main class="admin-page"><div class="login-card"><p class="eyebrow">ÁREA PRIVADA</p><h1>Administrador</h1><p>Ingresá con las credenciales configuradas por el propietario.</p>
+<form method="post"><input type="hidden" name="_csrf" value="{{ csrf_token() }}"><label>Usuario</label><input name="username" autocomplete="username" required><label>Contraseña</label><input type="password" name="password" autocomplete="current-password" required><button class="btn btn-fire" type="submit">Iniciar sesión</button></form>
+<a class="back-link" href="{{ url_for('home') }}">← Volver a la página</a></div></main>{% endblock %}
