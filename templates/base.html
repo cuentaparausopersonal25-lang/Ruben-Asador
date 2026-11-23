@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="RUBEN ASADOR. Servicio de asador argentino para eventos, cumpleaños y reuniones.">
+  <title>{% block title %}RUBEN ASADOR{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="{{ url_for('home') }}"><span class="brand-mark">🔥</span> RUBEN <b>ASADOR</b></a>
+  <nav><a href="{{ url_for('home') }}#servicios">Servicios</a><a href="{{ url_for('home') }}#galeria">Galería</a><a href="{{ url_for('home') }}#contacto">Contacto</a></nav>
+</header>
+{% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}<div class="flash-wrap">{% for category, message in messages %}<div class="flash {{ category }}">{{ message }}</div>{% endfor %}</div>{% endif %}
+{% endwith %}
+{% block content %}{% endblock %}
+<footer><div class="container footer-inner"><span>© {{ 2026 }} RUBEN ASADOR</span><a href="{{ url_for('admin_login') }}">Acceso administrador</a></div></footer>
+</body></html>
