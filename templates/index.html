@@ -1,0 +1,30 @@
+{% extends "base.html" %}{% block title %}RUBEN ASADOR | Asador para eventos{% endblock %}
+{% block content %}
+<section class="hero">
+  <div class="hero-shade"></div><div class="hero-content container">
+    <p class="eyebrow">TRADICIÓN · FUEGO · EXPERIENCIA</p>
+    <h1>RUBEN<br><span>ASADOR</span></h1>
+    <p class="hero-copy">El auténtico espíritu del asado argentino, en tus eventos.</p>
+    <a class="btn btn-fire" href="https://wa.me/5493874078493?text=%C2%A1Hola%20Rub%C3%A9n!%20Vi%20tu%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20consultar%20por%20tus%20servicios%20de%20asador%20para%20un%20evento." target="_blank" rel="noopener">Contactame aqui +54 9 387 407-8493</a>
+  </div>
+  <div class="hero-bottom">ASADOS PARA MOMENTOS QUE MERECEN SER COMPARTIDOS</div>
+</section>
+<section class="intro container">
+  <p class="eyebrow">SOBRE MI TRABAJO</p><h2>El fuego reúne. <span>El buen asado queda en la memoria.</span></h2>
+  <p>Brindo servicio de asador para que disfrutes de tu evento mientras me ocupo del asado. Cada encuentro merece dedicación, buenos sabores y ese momento especial alrededor de la parrilla.</p>
+</section>
+<section class="services section-dark" id="servicios"><div class="container">
+  <p class="eyebrow">¿EN QUÉ OCASIONES?</p><h2>Un asador para <span>tu evento</span></h2>
+  <div class="service-grid">
+    <article><span>01</span><h3>Cumpleaños</h3><p>Un festejo especial con el sabor de un buen asado.</p></article>
+    <article><span>02</span><h3>Reuniones familiares</h3><p>Compartí con los tuyos; del asado me encargo yo.</p></article>
+    <article><span>03</span><h3>Eventos privados</h3><p>Servicio de asador para encuentros y celebraciones.</p></article>
+    <article><span>04</span><h3>Ocasiones especiales</h3><p>Tradición y dedicación para ese día importante.</p></article>
+  </div>
+</div></section>
+<section class="gallery container" id="galeria"><p class="eyebrow">TRABAJOS REALIZADOS</p><h2>Galería de <span>asados</span></h2>
+  {% if photos %}<div class="photo-grid">{% for photo in photos %}<article class="photo-card"><img src="{{ url_for('uploaded_file', filename=photo.filename) }}" alt="{{ photo.title }}"><div class="photo-info"><h3>{{ photo.title }}</h3>{% if photo.description %}<p>{{ photo.description }}</p>{% endif %}</div></article>{% endfor %}</div>
+  {% else %}<div class="empty-gallery"><div class="ember">✦</div><h3>Próximamente, más momentos de parrilla</h3><p>Las fotografías de los trabajos de Rubén aparecerán aquí.</p></div>{% endif %}
+</section>
+<section class="contact" id="contacto"><div class="container contact-inner"><div><p class="eyebrow">HABLEMOS DE TU EVENTO</p><h2>¿Se viene un <span>gran asado?</span></h2><p>Consultá disponibilidad y contame qué ocasión estás organizando.</p></div><a class="btn btn-fire" href="https://wa.me/5493874078493?text=%C2%A1Hola%20Rub%C3%A9n!%20Vi%20tu%20p%C3%A1gina%20web%20y%20me%20gustar%C3%ADa%20consultar%20por%20tus%20servicios%20de%20asador%20para%20un%20evento." target="_blank" rel="noopener">Contactame aqui +54 9 387 407-8493</a></div></section>
+{% endblock %}
